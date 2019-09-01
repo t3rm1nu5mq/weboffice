@@ -41,3 +41,41 @@ nav {
 body {
     background-color: #f4f3ec;
 }
+
+.card-header {
+    background-color: $middle;
+    color: white;
+    font-weight: bolder;
+}
+
+.card {
+    border: 1px solid $middle;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.btn-primary {
+    background-color: $dark;
+    color: white;
+    font-weight: bold;
+    border: 1px solid $dark;
+}
+.btn-primary:hover {
+    background-color: $middle;
+    border: 1px solid $middle;
+    font-style: italic;
+}
+
+.btn-link {
+    color: $light;
+}
+.btn-link:hover {
+    color: $middle;
+}
+
+#password,
+#email,
+#name,
+#password-confirm {
+    border-radius: 30px;
+}

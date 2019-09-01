@@ -10680,3 +10680,43 @@ body {
   background-color: #f4f3ec;
 }
 
+.card-header {
+  background-color: #801336;
+  color: white;
+  font-weight: bolder;
+}
+
+.card {
+  border: 1px solid #801336;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.btn-primary {
+  background-color: #510a32;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #510a32;
+}
+
+.btn-primary:hover {
+  background-color: #801336;
+  border: 1px solid #801336;
+  font-style: italic;
+}
+
+.btn-link {
+  color: #c72c41;
+}
+
+.btn-link:hover {
+  color: #801336;
+}
+
+#password,
+#email,
+#name,
+#password-confirm {
+  border-radius: 30px;
+}
+
