@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -76,5 +76,7 @@
             @yield('content')
         </main>
     </div>
+
+    <footer class="footer">&copy; 2019 - All rights reserved.<br>Developed by <b>TerminusMq</b></footer>
 </body>
 </html>
