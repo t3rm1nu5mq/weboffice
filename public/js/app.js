@@ -1851,6 +1851,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Dashboard"
 });
@@ -6366,7 +6372,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody[data-v-040e2ab9] {\n    background-color: #f4f3ec;\n}\n.main-menu[data-v-040e2ab9] {\n    cursor: pointer;\n    border: 1px solid;\n    border-radius: 15px;\n    width: 50%;\n    height: 100px;\n    text-align: center;\n    margin: 20px;\n    font-size: large;\n}\n.main-menu[data-v-040e2ab9]:hover {\n    background-color: red;\n}\n", ""]);
+exports.push([module.i, "\n.main-menu[data-v-040e2ab9] {\n    cursor: pointer;\n    border: 1px solid;\n    border-radius: 15px;\n    width: 150px;\n    height: 150px;\n    text-align: center;\n    margin: 10px;\n    font-size: large;\n    padding: 20px;\n    background-color: #2d142c;\n    color: white;\n}\n.main-menu[data-v-040e2ab9]:hover {\n    background-color: #510a32;\n    color: white;\n    font-weight: bold;\n}\n.main-menu-icon[data-v-040e2ab9] {\n    height: 70px;\n    width: auto;\n}\n", ""]);
 
 // exports
 
@@ -37856,15 +37862,38 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-4 main-menu" }, [
-          _vm._v("\n            Projektek\n        ")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-md-4 main-menu" }, [
-          _vm._v("\n            Pénzügyek\n        ")
-        ])
-      ])
+      _c(
+        "div",
+        { staticClass: "row", staticStyle: { margin: "auto", width: "50%" } },
+        [
+          _c("div", { staticClass: "main-menu" }, [
+            _c("img", {
+              staticClass: "main-menu-icon",
+              attrs: { src: "/icons/partner.png" }
+            }),
+            _c("br"),
+            _vm._v("\n                Partnerek\n            ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "main-menu" }, [
+            _c("img", {
+              staticClass: "main-menu-icon",
+              attrs: { src: "/icons/project.png" }
+            }),
+            _c("br"),
+            _vm._v("\n                Projektek\n            ")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "main-menu" }, [
+            _c("img", {
+              staticClass: "main-menu-icon",
+              attrs: { src: "/icons/finance.png" }
+            }),
+            _c("br"),
+            _vm._v("\n                Pénzügyek\n            ")
+          ])
+        ]
+      )
     ])
   }
 ]

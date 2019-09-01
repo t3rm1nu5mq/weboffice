@@ -6,3 +6,38 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $dark;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: $middle;
+    color: white;
+    text-decoration: none;
+    a {
+        color: white;
+    }
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+    color: white;
+    text-decoration: none;
+}
+
+#navbarDropdown:hover {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f4f3ec;
+}

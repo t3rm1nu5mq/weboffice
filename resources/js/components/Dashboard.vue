@@ -24,9 +24,6 @@
 </script>
 
 <style scoped>
-    body {
-        background-color: #f4f3ec;
-    }
     .main-menu {
         cursor: pointer;
         border: 1px solid;
