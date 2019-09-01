@@ -1,14 +1,20 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 main-menu">
-                Projektek
-            </div>
-            <div class="col-md-4 main-menu">
-                Pénzügyek
+            <div class="row" style="margin: auto; width: 50%">
+                <div class="main-menu">
+                    <img src="/icons/partner.png" class="main-menu-icon"><br>
+                    Partnerek
+                </div>
+                <div class="main-menu">
+                    <img src="/icons/project.png" class="main-menu-icon"><br>
+                    Projektek
+                </div>
+                <div class="main-menu">
+                    <img src="/icons/finance.png" class="main-menu-icon"><br>
+                    Pénzügyek
+                </div>
             </div>
         </div>
-    </div>
 </template>
 
 <script>
@@ -25,14 +31,24 @@
         cursor: pointer;
         border: 1px solid;
         border-radius: 15px;
-        width: 50%;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         text-align: center;
-        margin: 20px;
+        margin: 10px;
         font-size: large;
+        padding: 20px;
+        background-color: #2d142c;
+        color: white;
     }
 
     .main-menu:hover {
-        background-color: red;
+        background-color: #510a32;
+        color: white;
+        font-weight: bold;
+    }
+
+    .main-menu-icon {
+        height: 70px;
+        width: auto;
     }
 </style>
