@@ -10,6 +10,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
         <style>
             html, body {
                 background-color: #fff;
@@ -68,9 +70,9 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a class="main-header-button" href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a class="main-header-button" href="{{ route('login') }}">Login</a>
 
 {{--                        @if (Route::has('register'))--}}
 {{--                            <a href="{{ route('register') }}">Register</a>--}}
