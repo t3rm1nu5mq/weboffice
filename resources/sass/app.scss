@@ -86,3 +86,8 @@ body {
     border-radius: 30px;
     padding: 10px !important;
 }
+
+.main-header-button:hover {
+    background-color: $middle;
+    border-color: $middle;
+}
