@@ -9,10 +9,22 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import Vue from 'vue'
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.min.css'
+// import VueMaterial from 'vue-material'
+// import 'vue-material/dist/vue-material.min.css'
+//
+// Vue.use(VueMaterial);
+import '@mdi/font/css/materialdesignicons.css'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
 
-Vue.use(VueMaterial);
+window.Vuetify = require('vuetify');
+
+Vue.use(Vuetify);
+export default new Vuetify({
+    icons: {
+        iconfont: 'mdi',
+    },
+})
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -35,4 +47,5 @@ Vue.component('dashboard', require('./components/Dashboard').default);
 
 const app = new Vue({
     el: '#app',
-});
+    vuetify: new Vuetify()
+}).$mount('#app');

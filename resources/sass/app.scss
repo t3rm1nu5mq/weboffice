@@ -91,3 +91,11 @@ body {
     background-color: $middle;
     border-color: $middle;
 }
+
+nav.navbar {
+    height: 50px !important;
+}
+
+-v-card:hover {
+    background-color: red;
+}
