@@ -20,3 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('payments', 'API\PaymentController');
 
 Route::resource('partners', 'API\PartnerController');
+
+Route::post('/additional_data', [
+    'uses' => 'API\AdditionalDataController@get'
+]);
