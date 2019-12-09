@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <v-app id="inspire">
         <v-navigation-drawer
             v-model="drawer"
             app
@@ -28,73 +28,81 @@
         <v-app-bar
             app
             clipped-left
+            color="#801336"
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title>Application</v-toolbar-title>
+            <v-toolbar-title>TerminusMq WebOffice</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn text height="100%">
+                <v-avatar color="#ee4540">
+                    <v-icon dark>mdi-account-circle</v-icon>
+                </v-avatar>
+                <span style="padding-left: 5px">Szabó András Ferenc</span>
+            </v-btn>
         </v-app-bar>
 
         <v-content>
-            <v-container
-                class="fill-height"
-                fluid
-            >
-                <v-row
-                    align="center"
-                    justify="center"
-                >
-                    <v-col class="shrink">
-                        <v-tooltip right>
-                            <template v-slot:activator="{ on }">
-                                <v-btn
-                                    :href="source"
-                                    icon
-                                    large
-                                    target="_blank"
-                                    v-on="on"
-                                >
-                                    <v-icon large>mdi-code-tags</v-icon>
-                                </v-btn>
-                            </template>
-                            <span>Source</span>
-                        </v-tooltip>
-                        <v-tooltip right>
-                            <template v-slot:activator="{ on }">
-                                <v-btn
-                                    icon
-                                    large
-                                    href="https://codepen.io/johnjleider/pen/bXNzZL"
-                                    target="_blank"
-                                    v-on="on"
-                                >
-                                    <v-icon large>mdi-codepen</v-icon>
-                                </v-btn>
-                            </template>
-                            <span>Codepen</span>
-                        </v-tooltip>
-                    </v-col>
-                </v-row>
-            </v-container>
+            <slot name="content"></slot>
         </v-content>
 
-        <v-footer app>
-            <span>&copy; 2019</span>
+        <v-footer padless color="#510a32" app>
+            <v-col
+                class="text-center">
+                &copy; 2019 - All rights reserved. Developed by <b>TerminusMq</b>
+            </v-col>
         </v-footer>
-    </div>
+    </v-app>
 </template>
 
 <script>
+
     export default {
         name: "Layout",
 
-        data: () => ({
-            drawer: null,
-        }),
+        data() {
+            return {
+                drawer: false,
+                filters: {
+                    payment_methods: []
+                }
+            }
+        },
+
         created () {
-            // this.$vuetify.theme.dark = true
+            this.$vuetify.theme.dark = true;
+            const that = this;
+            axios.post('/api/additional_data', that.filters).then(function(response) {
+                console.log(response.data);
+            }).catch(function(error) {
+                console.log(error);
+            });
         },
     }
 </script>
 
 <style scoped>
+    .main-menu {
+        cursor: pointer;
+        border: 1px solid;
+        border-radius: 15px;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        margin: 10px;
+        font-size: large;
+        padding: 20px;
+        background-color: #2d142c;
+        color: white;
+    }
 
+    .main-menu:hover {
+        background-color: #510a32;
+        color: white;
+        font-weight: bold;
+    }
+
+    .main-menu-icon {
+        height: 70px;
+        width: auto;
+    }
 </style>
