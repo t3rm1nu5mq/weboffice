@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes(['verify' => true, 'register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+Route::get('/payments', function () {
+    return view('payments.index');
+});
