@@ -33,12 +33,30 @@
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title>TerminusMq WebOffice</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn text height="100%">
-                <v-avatar color="#ee4540">
-                    <v-icon dark>mdi-account-circle</v-icon>
-                </v-avatar>
-                <span style="padding-left: 5px">Szabó András Ferenc</span>
-            </v-btn>
+            <v-menu
+                v-model="showUserMenu"
+                offset-y
+                style="max-width: 600px"
+            >
+                <template v-slot:activator="{ on }">
+                    <v-btn text height="100%" v-on="on">
+                        <v-avatar color="#ee4540">
+                            <v-icon dark>mdi-account-circle</v-icon>
+                        </v-avatar>
+                        <span style="padding-left: 5px">Szabó András Ferenc</span>
+                    </v-btn>
+                </template>
+
+                <v-list>
+                    <v-list-item
+                        v-for="(item, index) in user_menu"
+                        :key="index"
+                        @click=""
+                    >
+                        <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
         </v-app-bar>
 
         <v-content>
@@ -55,13 +73,21 @@
 </template>
 
 <script>
-
     export default {
         name: "Layout",
 
         data() {
             return {
                 drawer: false,
+                showUserMenu: false,
+                user_menu: [
+                    {
+                        title: 'Saját fiók'
+                    },
+                    {
+                        title: 'Kijelentkezés'
+                    }
+                ],
                 filters: {
                     payment_methods: []
                 }
