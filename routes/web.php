@@ -22,3 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 Route::get('/payments', function () {
     return view('payments.index');
 });
+
+Route::get('/token_manager', function() {
+    return view('token_manager');
+});
