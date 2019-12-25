@@ -17,9 +17,15 @@
         return $request->user();
     });
 
+    ###############
+    ## resources ##
+    ###############
     Route::resource('payments', 'API\PaymentController');
 
     Route::resource('partners', 'API\PartnerController');
+
+    Route::resource('issues', 'API\IssueController');
+    ########################################################
 
     Route::post('/additional_data', ['uses' => 'API\AdditionalDataController@get']);
 
