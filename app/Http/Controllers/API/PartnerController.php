@@ -14,7 +14,7 @@
          * @return \Illuminate\Http\Response
          */
         public function index () {
-            $partners = Partner::all();
+            $partners = Partner::with('main_address', 'main_address.country', 'main_address.city')->get();
 
             return response()->json(['data' => $partners]);
         }
@@ -87,5 +87,13 @@
             DB::beginTransaction();
             $partner->delete();
             DB::commit();
+        }
+
+        public function partners_count () {
+            $data = Partner::count();
+
+            return response()->json([
+                'data' => $data
+            ]);
         }
     }
