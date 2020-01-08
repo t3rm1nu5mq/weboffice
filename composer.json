@@ -13,6 +13,7 @@
         "facade/ignition": "^1.12",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
+        "laravel/horizon": "^3.4",
         "laravel/passport": "^8.0",
         "laravel/socialite": "^4.3",
         "laravel/tinker": "^1.0"
