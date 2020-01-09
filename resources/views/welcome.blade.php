@@ -4,6 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta property="og:title" content="{{ config('app.name', 'Brand') }}" />
+        <meta property="og:url" content="{{ url()->current() }}" />
+        <meta property="og:image" content="https://kedvezmeny.hu/shareimg">
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        
+
         <title>TerminusMq WebOffice</title>
 
         <!-- Fonts -->
