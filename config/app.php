@@ -167,6 +167,7 @@ return [
          */
         Barryvdh\DomPDF\ServiceProvider::class,
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
+        Barryvdh\Elfinder\ElfinderServiceProvider::class,
 
         /*
          * Application Service Providers...
