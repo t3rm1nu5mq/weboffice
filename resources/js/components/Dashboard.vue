@@ -37,7 +37,6 @@
 <script>
     import layout from './Layout';
 
-
     export default {
         name: 'Dashboard',
 

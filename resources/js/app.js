@@ -16,9 +16,12 @@ import Vue from 'vue'
 import '@mdi/font/css/materialdesignicons.css'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import CKEditor from '@ckeditor/ckeditor5-vue';
+
 
 window.Vuetify = require('vuetify');
 
+Vue.use( CKEditor );
 Vue.use(Vuetify);
 export default new Vuetify({
     icons: {
