@@ -20,6 +20,17 @@
                 'id' => 2,
                 'name' => 'lezárva'
             ]
+        ],
+
+        'issue_types' => [
+            'bug' => [
+                'id' => 1,
+                'title' => 'Hiba'
+            ],
+            'feature' => [
+                'id' => 2,
+                'title' => 'Új szolgáltatás'
+            ]
         ]
 
     ];
