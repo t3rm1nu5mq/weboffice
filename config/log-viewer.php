@@ -104,7 +104,7 @@
          | -----------------------------------------------------------------
          */
 
-        'colors' => ['levels' => ['empty' => '#D1D1D1', 'all' => '#8A8A8A', 'emergency' => '#B71C1C', 'alert' => '#D32F2F', 'critical' => '#F44336', 'error' => '#FF5722', 'warning' => '#FF9100', 'notice' => '#4CAF50', 'info' => '#1976D2', 'debug' => '#90CAF9',],],
+        'colors' => ['levels' => ['empty' => '#2d142c', 'all' => '#8A8A8A', 'emergency' => '#B71C1C', 'alert' => '#D32F2F', 'critical' => '#F44336', 'error' => '#FF5722', 'warning' => '#FF9100', 'notice' => '#4CAF50', 'info' => '#1976D2', 'debug' => '#90CAF9',],],
 
         /* -----------------------------------------------------------------
          |  Strings to highlight in stack trace
