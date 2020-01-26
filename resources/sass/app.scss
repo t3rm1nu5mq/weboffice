@@ -99,3 +99,12 @@ nav.navbar {
 -v-card:hover {
     background-color: red;
 }
+
+.infobox {
+    background-color: #f4f4ec;
+    border: 2px solid $dark;
+    border-top: 10px solid $dark;
+    padding: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
