@@ -3,6 +3,7 @@
     namespace App\Helpers;
 
     use App\Address;
+    use App\Invoice;
 
     class Helper {
         public function get_address ($id) {
@@ -18,5 +19,24 @@
             $address->door = $data->door;
 
             return $address;
+        }
+
+
+        /**
+         * Számla számának generálására szolgáló function
+         * A szám generálásánál figyelembe veszi, hogy a számnak egyedinek kell lennie
+         *
+         * @return int|string
+         */
+        public static function create_invoice_number () {
+            $invoice_number = "";
+            $invoice = null;
+
+            do {
+                $invoice_number = rand(100000000000, 999999999999);
+                $invoice = Invoice::where('invoice_number', $invoice_number)->first();
+            } while (!empty($invoice));
+
+            return $invoice_number;
         }
     }
