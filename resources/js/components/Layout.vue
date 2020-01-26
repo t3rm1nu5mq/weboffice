@@ -6,12 +6,12 @@
             clipped
         >
             <v-list dense>
-                <v-list-item @click="">
+                <v-list-item @click="appDrawer('home')">
                     <v-list-item-action>
                         <v-icon>mdi-view-dashboard</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title>Dashboard</v-list-item-title>
+                        <v-list-item-title>Irányítópult</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
                 <v-list-item @click="">
@@ -19,7 +19,7 @@
                         <v-icon>mdi-settings</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title>Settings</v-list-item-title>
+                        <v-list-item-title>Beállítások</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
@@ -51,7 +51,7 @@
                     <v-list-item
                         v-for="(item, index) in user_menu"
                         :key="index"
-                        @click=""
+                        @click="userMenuClicked(item.action)"
                     >
                         <v-list-item-title>{{ item.title }}</v-list-item-title>
                     </v-list-item>
@@ -59,7 +59,7 @@
             </v-menu>
         </v-app-bar>
 
-        <v-content>
+        <v-content style="padding: 30px 0px 45px !important">
             <slot name="content"></slot>
         </v-content>
 
@@ -85,7 +85,8 @@
                         title: 'Saját fiók'
                     },
                     {
-                        title: 'Kijelentkezés'
+                        title: 'Kijelentkezés',
+                        action: 'logout'
                     }
                 ],
                 filters: {
@@ -103,6 +104,19 @@
                 console.log(error);
             });
         },
+
+        methods: {
+            appDrawer(location) {
+                window.location.href="/"+location;
+            },
+            userMenuClicked(method) {
+                switch (method) {
+                    case 'logout':
+                        document.getElementById('logout-form').submit();
+                        break;
+                }
+            }
+        }
     }
 </script>
 
