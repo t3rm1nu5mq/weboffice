@@ -2115,6 +2115,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Layout",
   data: function data() {
@@ -2223,6 +2224,233 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Payments",
@@ -2232,8 +2460,86 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       year: new Date().getFullYear(),
-      month: new Date().getMonth() + 1
+      month: new Date().getMonth() + 1,
+      addDialogVisible: false,
+      deadlineSelector: false,
+      modalData: {
+        partner: "",
+        payment_method: "",
+        deadline: "",
+        paid: false,
+        type: "",
+        amount: "",
+        with_invoice: false,
+        invoice_type: null,
+        invoice_items: [{
+          title: "Egyedi szoftverfejlesztés",
+          unit: "óra",
+          count: "120",
+          unit_price: "2000",
+          vat: "AAM",
+          netto_price: 240000,
+          brutto_price: 240000
+        }]
+      },
+      invoice_item: {
+        title: "",
+        unit: "",
+        count: "",
+        unit_price: "",
+        vat: "",
+        netto_price: 0,
+        brutto_price: 0
+      },
+      filters: {},
+      payment_methods: [{
+        name: 'Készpénz',
+        value: 1
+      }, {
+        name: 'Bankkártya',
+        value: 0
+      }, {
+        name: 'Átutalás',
+        value: 2
+      }],
+      invoice_types: [{
+        name: 'Önszámla',
+        value: 0
+      }, {
+        name: 'Számla',
+        value: 1
+      }, {
+        name: 'Díjbekérő',
+        value: 2
+      }, {
+        name: 'Előlegszámla',
+        value: 3
+      }, {
+        name: 'Résszámla',
+        value: 4
+      }, {
+        name: 'Sztornó számla',
+        value: 5
+      }]
     };
+  },
+  mounted: function mounted() {
+    var that = this;
+    axios.post('/api/additional_data', that.filters).then(function (response) {})["catch"](function (error) {
+      console.log(error);
+    });
+  },
+  methods: {
+    update: function update() {
+      var that = this;
+      axios.post('/api/paymentd', {
+        data: that.modalData
+      }).then(function (response) {
+        console.log(response.data);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 
@@ -38587,7 +38893,10 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("v-toolbar-title", [_vm._v("TerminusMq WebOffice")]),
+          _c("img", {
+            staticStyle: { "border-radius": "10px", width: "22%" },
+            attrs: { src: "/images/logo.png" }
+          }),
           _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
@@ -38677,7 +38986,9 @@ var render = function() {
         { attrs: { padless: "", color: "#510a32", app: "" } },
         [
           _c("v-col", { staticClass: "text-center" }, [
-            _vm._v("\n            © 2019 - All rights reserved. Developed by "),
+            _vm._v(
+              "\n                © 2019 - All rights reserved. Developed by "
+            ),
             _c("b", [_vm._v("TerminusMq")])
           ])
         ],
@@ -38720,50 +39031,889 @@ var render = function() {
                 _c("div", { staticClass: "col-md-9" }, [
                   _c("h2", [_vm._v("Pénzügyek kezelése")]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "row infobox" }, [
-                    _c("button", { staticClass: "btn btn-primary" }, [
-                      _c("i", { staticClass: "fas fa-plus" }),
-                      _vm._v(
-                        " Új pénzügyi tranzakció\n                        "
+                  _c(
+                    "div",
+                    { staticClass: "row infobox" },
+                    [
+                      _c(
+                        "v-dialog",
+                        {
+                          attrs: { width: "80%" },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "activator",
+                              fn: function(ref) {
+                                var on = ref.on
+                                return [
+                                  _c(
+                                    "button",
+                                    _vm._g(
+                                      { staticClass: "btn btn-primary" },
+                                      on
+                                    ),
+                                    [
+                                      _c("i", { staticClass: "fas fa-plus" }),
+                                      _vm._v(
+                                        " Új pénzügyi tranzakció\n                                "
+                                      )
+                                    ]
+                                  )
+                                ]
+                              }
+                            }
+                          ]),
+                          model: {
+                            value: _vm.addDialogVisible,
+                            callback: function($$v) {
+                              _vm.addDialogVisible = $$v
+                            },
+                            expression: "addDialogVisible"
+                          }
+                        },
+                        [
+                          _vm._v(" "),
+                          _c(
+                            "v-card",
+                            [
+                              _c("v-card-title", { staticClass: "headline" }, [
+                                _vm._v("Új pénzügyi tranzakció")
+                              ]),
+                              _vm._v(" "),
+                              _c("v-card-text", [
+                                _c("div", { staticClass: "row" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-md-5" },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          color: "#ffffff",
+                                          label: "Partner",
+                                          outlined: "",
+                                          shaped: "",
+                                          clearable: ""
+                                        },
+                                        model: {
+                                          value: _vm.modalData.partner,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.modalData,
+                                              "partner",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "modalData.partner"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-md-3" },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: _vm.payment_methods,
+                                          label: "Tranzakció típusa",
+                                          color: "#ffffff",
+                                          "item-text": "name",
+                                          "item-value": "value",
+                                          shaped: "",
+                                          outlined: ""
+                                        },
+                                        model: {
+                                          value: _vm.modalData.type,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.modalData, "type", $$v)
+                                          },
+                                          expression: "modalData.type"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-md-4" },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          color: "#ffffff",
+                                          label: "Összeg (Ft)",
+                                          outlined: "",
+                                          shaped: "",
+                                          clearable: ""
+                                        },
+                                        model: {
+                                          value: _vm.modalData.amount,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.modalData,
+                                              "amount",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "modalData.amount"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "row" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-md-3" },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          items: _vm.payment_methods,
+                                          label: "Fizetés módja",
+                                          color: "#ffffff",
+                                          "item-text": "name",
+                                          "item-value": "value",
+                                          shaped: "",
+                                          outlined: ""
+                                        },
+                                        model: {
+                                          value: _vm.modalData.payment_method,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.modalData,
+                                              "payment_method",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "modalData.payment_method"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-md-3" },
+                                    [
+                                      _c(
+                                        "v-menu",
+                                        {
+                                          ref: "menu",
+                                          attrs: {
+                                            "close-on-content-click": false,
+                                            "return-value":
+                                              _vm.modalData.deadline,
+                                            transition: "scale-transition",
+                                            "offset-y": "",
+                                            "min-width": "290px"
+                                          },
+                                          on: {
+                                            "update:returnValue": function(
+                                              $event
+                                            ) {
+                                              return _vm.$set(
+                                                _vm.modalData,
+                                                "deadline",
+                                                $event
+                                              )
+                                            },
+                                            "update:return-value": function(
+                                              $event
+                                            ) {
+                                              return _vm.$set(
+                                                _vm.modalData,
+                                                "deadline",
+                                                $event
+                                              )
+                                            }
+                                          },
+                                          scopedSlots: _vm._u([
+                                            {
+                                              key: "activator",
+                                              fn: function(ref) {
+                                                var on = ref.on
+                                                return [
+                                                  _c(
+                                                    "v-text-field",
+                                                    _vm._g(
+                                                      {
+                                                        attrs: {
+                                                          label:
+                                                            "Fizetési határidő",
+                                                          readonly: "",
+                                                          outlined: "",
+                                                          shaped: ""
+                                                        },
+                                                        model: {
+                                                          value:
+                                                            _vm.modalData
+                                                              .deadline,
+                                                          callback: function(
+                                                            $$v
+                                                          ) {
+                                                            _vm.$set(
+                                                              _vm.modalData,
+                                                              "deadline",
+                                                              $$v
+                                                            )
+                                                          },
+                                                          expression:
+                                                            "modalData.deadline"
+                                                        }
+                                                      },
+                                                      on
+                                                    )
+                                                  )
+                                                ]
+                                              }
+                                            }
+                                          ]),
+                                          model: {
+                                            value: _vm.deadlineSelector,
+                                            callback: function($$v) {
+                                              _vm.deadlineSelector = $$v
+                                            },
+                                            expression: "deadlineSelector"
+                                          }
+                                        },
+                                        [
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-date-picker",
+                                            {
+                                              attrs: {
+                                                "no-title": "",
+                                                scrollable: ""
+                                              },
+                                              model: {
+                                                value: _vm.modalData.deadline,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    _vm.modalData,
+                                                    "deadline",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression: "modalData.deadline"
+                                              }
+                                            },
+                                            [
+                                              _c("v-spacer"),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-btn",
+                                                {
+                                                  attrs: {
+                                                    text: "",
+                                                    color: "primary"
+                                                  },
+                                                  on: {
+                                                    click: function($event) {
+                                                      _vm.deadlineSelector = false
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                                        Cancel\n                                                    "
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-btn",
+                                                {
+                                                  attrs: {
+                                                    text: "",
+                                                    color: "primary"
+                                                  },
+                                                  on: {
+                                                    click: function($event) {
+                                                      return _vm.$refs.menu.save(
+                                                        _vm.modalData.deadline
+                                                      )
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "OK\n                                                    "
+                                                  )
+                                                ]
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-md-1" },
+                                    [
+                                      _c("label", [_vm._v("Fizetve")]),
+                                      _vm._v(" "),
+                                      _c("v-switch", {
+                                        staticStyle: {
+                                          "margin-top": "0px !important"
+                                        },
+                                        attrs: { color: "success", inset: "" },
+                                        model: {
+                                          value: _vm.modalData.paid,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.modalData, "paid", $$v)
+                                          },
+                                          expression: "modalData.paid"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "col-md-2" },
+                                    [
+                                      _c("label", [
+                                        _vm._v("Számla generálása")
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("v-switch", {
+                                        staticStyle: {
+                                          "margin-top": "0 !important"
+                                        },
+                                        attrs: { color: "red", inset: "" },
+                                        model: {
+                                          value: _vm.modalData.with_invoice,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.modalData,
+                                              "with_invoice",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "modalData.with_invoice"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _vm.modalData.with_invoice
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "col-md-3" },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              items: _vm.invoice_types,
+                                              label: "Számla típusa",
+                                              color: "#ffffff",
+                                              "item-text": "name",
+                                              "item-value": "value",
+                                              shaped: "",
+                                              outlined: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.modalData.payment_method,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.modalData,
+                                                  "payment_method",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "modalData.payment_method"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    : _vm._e()
+                                ]),
+                                _vm._v(" "),
+                                _vm.modalData.with_invoice
+                                  ? _c("div", { staticClass: "row" }, [
+                                      _c("div", { staticClass: "col-md-6" }, [
+                                        _c("h3", [_vm._v("Számla tételei")])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "col-md-12" }, [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "row",
+                                            staticStyle: {
+                                              "margin-left": "10px"
+                                            }
+                                          },
+                                          [
+                                            _c("v-text-field", {
+                                              staticStyle: { width: "200px" },
+                                              attrs: {
+                                                color: "#ffffff",
+                                                label: "Megnevezés",
+                                                outlined: "",
+                                                shaped: "",
+                                                clearable: ""
+                                              },
+                                              model: {
+                                                value: _vm.invoice_item.title,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    _vm.invoice_item,
+                                                    "title",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression: "invoice_item.title"
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c("v-text-field", {
+                                              staticStyle: { width: "60px" },
+                                              attrs: {
+                                                color: "#ffffff",
+                                                label: "Mennyiség",
+                                                outlined: "",
+                                                shaped: "",
+                                                clearable: ""
+                                              },
+                                              model: {
+                                                value: _vm.invoice_item.count,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    _vm.invoice_item,
+                                                    "count",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression: "invoice_item.count"
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c("v-text-field", {
+                                              staticStyle: { width: "80px" },
+                                              attrs: {
+                                                color: "#ffffff",
+                                                label: "Mennyiségi egység",
+                                                outlined: "",
+                                                shaped: "",
+                                                clearable: ""
+                                              },
+                                              model: {
+                                                value: _vm.invoice_item.unit,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    _vm.invoice_item,
+                                                    "unit",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression: "invoice_item.unit"
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c("v-text-field", {
+                                              staticStyle: { width: "50px" },
+                                              attrs: {
+                                                color: "#ffffff",
+                                                label: "Egységár",
+                                                outlined: "",
+                                                shaped: "",
+                                                clearable: ""
+                                              },
+                                              model: {
+                                                value:
+                                                  _vm.invoice_item.unit_price,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    _vm.invoice_item,
+                                                    "unit_price",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression:
+                                                  "invoice_item.unit_price"
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c("v-text-field", {
+                                              staticStyle: { width: "50px" },
+                                              attrs: {
+                                                color: "#ffffff",
+                                                label: "ÁFA",
+                                                outlined: "",
+                                                shaped: "",
+                                                clearable: ""
+                                              },
+                                              model: {
+                                                value: _vm.invoice_item.vat,
+                                                callback: function($$v) {
+                                                  _vm.$set(
+                                                    _vm.invoice_item,
+                                                    "vat",
+                                                    $$v
+                                                  )
+                                                },
+                                                expression: "invoice_item.vat"
+                                              }
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "v-btn",
+                                              {
+                                                staticClass: "mx-2",
+                                                attrs: {
+                                                  fab: "",
+                                                  dark: "",
+                                                  small: "",
+                                                  color: "green"
+                                                }
+                                              },
+                                              [
+                                                _c(
+                                                  "v-icon",
+                                                  { attrs: { dark: "" } },
+                                                  [_vm._v("mdi-plus")]
+                                                )
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _vm.modalData.invoice_items.length > 0
+                                        ? _c(
+                                            "div",
+                                            {
+                                              staticClass: "col-md-12",
+                                              staticStyle: {
+                                                "margin-left": "10px"
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "table",
+                                                {
+                                                  staticStyle: {
+                                                    width: "80%",
+                                                    color: "white",
+                                                    margin: "auto"
+                                                  },
+                                                  attrs: { border: "1px" }
+                                                },
+                                                [
+                                                  _c(
+                                                    "tr",
+                                                    {
+                                                      staticStyle: {
+                                                        "text-align": "center"
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("th", [
+                                                        _vm._v("Megnevezés")
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "th",
+                                                        {
+                                                          staticStyle: {
+                                                            width: "100px"
+                                                          }
+                                                        },
+                                                        [_vm._v("Mennyiség")]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "th",
+                                                        {
+                                                          staticStyle: {
+                                                            width: "160px"
+                                                          }
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "Mennyiségi egység"
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c("th", [
+                                                        _vm._v("Egységár")
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("th", [
+                                                        _vm._v("Nettó összeg")
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("th", [
+                                                        _vm._v("Bruttó összeg")
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("th", [
+                                                        _vm._v("Törlés")
+                                                      ])
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _vm._l(
+                                                    _vm.modalData.invoice_items,
+                                                    function(item) {
+                                                      return _c(
+                                                        "tr",
+                                                        {
+                                                          staticStyle: {
+                                                            "text-align":
+                                                              "center"
+                                                          }
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "td",
+                                                            {
+                                                              staticStyle: {
+                                                                "text-align":
+                                                                  "left !important",
+                                                                "padding-left":
+                                                                  "10px !important"
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                _vm._s(
+                                                                  item.title
+                                                                )
+                                                              )
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "td",
+                                                            {
+                                                              staticStyle: {
+                                                                "padding-left":
+                                                                  "0px !important"
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                _vm._s(
+                                                                  item.count
+                                                                )
+                                                              )
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "td",
+                                                            {
+                                                              staticStyle: {
+                                                                "padding-left":
+                                                                  "0px !important"
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                _vm._s(
+                                                                  item.unit
+                                                                )
+                                                              )
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "td",
+                                                            {
+                                                              staticStyle: {
+                                                                "padding-left":
+                                                                  "0px !important"
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                _vm._s(
+                                                                  item.unit_price
+                                                                )
+                                                              )
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "td",
+                                                            {
+                                                              staticStyle: {
+                                                                "padding-left":
+                                                                  "0px !important"
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                _vm._s(
+                                                                  item.netto_price
+                                                                )
+                                                              )
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "td",
+                                                            {
+                                                              staticStyle: {
+                                                                "padding-left":
+                                                                  "0px !important"
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                _vm._s(
+                                                                  item.brutto_price
+                                                                )
+                                                              )
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "td",
+                                                            {
+                                                              staticStyle: {
+                                                                "padding-left":
+                                                                  "0px !important"
+                                                              }
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "v-icon",
+                                                                {
+                                                                  attrs: {
+                                                                    color:
+                                                                      "red",
+                                                                    dark: ""
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    "mdi-delete"
+                                                                  )
+                                                                ]
+                                                              )
+                                                            ],
+                                                            1
+                                                          )
+                                                        ]
+                                                      )
+                                                    }
+                                                  )
+                                                ],
+                                                2
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e()
+                                    ])
+                                  : _vm._e()
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-actions",
+                                [
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: { text: "" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.addDialogVisible = false
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                        Mégsem\n                                    "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: { color: "#801336", rounded: "" },
+                                      on: {
+                                        click: function($event) {
+                                          _vm.addDialogVisible = false
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                        Mentés\n                                    "
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("button", { staticClass: "btn btn-primary" }, [
+                        _c("i", { staticClass: "fas fa-balance-scale" }),
+                        _vm._v(
+                          " " +
+                            _vm._s(_vm.year) +
+                            ". évi jelentés\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("button", { staticClass: "btn btn-primary" }, [
+                        _c("i", { staticClass: "fas fa-balance-scale" }),
+                        _vm._v(
+                          " " +
+                            _vm._s(_vm.month) +
+                            ". havi jelentés\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("button", { staticClass: "btn btn-primary" }, [
+                        _c("i", { staticClass: "fas fa-archive" }),
+                        _vm._v(" Archívum\n                        ")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-primary",
+                          staticStyle: { position: "absolute", right: "35px" }
+                        },
+                        [
+                          _c("i", { staticClass: "fas fa-search" }),
+                          _vm._v(" Keresés\n                        ")
+                        ]
                       )
-                    ]),
-                    _vm._v(" "),
-                    _c("button", { staticClass: "btn btn-primary" }, [
-                      _c("i", { staticClass: "fas fa-balance-scale" }),
-                      _vm._v(
-                        " " +
-                          _vm._s(_vm.year) +
-                          ". évi jelentés\n                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("button", { staticClass: "btn btn-primary" }, [
-                      _c("i", { staticClass: "fas fa-balance-scale" }),
-                      _vm._v(
-                        " " +
-                          _vm._s(_vm.month) +
-                          ". havi jelentés\n                        "
-                      )
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("button", { staticClass: "btn btn-primary" }, [
-                      _c("i", { staticClass: "fas fa-archive" }),
-                      _vm._v(" Archívum\n                        ")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-primary",
-                        staticStyle: { position: "absolute", right: "35px" }
-                      },
-                      [
-                        _c("i", { staticClass: "fas fa-search" }),
-                        _vm._v(" Keresés\n                        ")
-                      ]
-                    )
-                  ])
+                    ],
+                    1
+                  )
                 ]),
                 _vm._v(" "),
                 _c(

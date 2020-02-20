@@ -31,6 +31,17 @@
                 'id' => 2,
                 'title' => 'Új szolgáltatás'
             ]
+        ],
+
+        'error_codes' => [
+            'has_invoice_delete_exception' => [
+                'message' => 'A fizetési tranzakcióhoz számla tartozik, törléséhez sztornózza a számlát.',
+                'code' => 418
+            ],
+            'not_found_exception' => [
+                'message' => 'A keresett adat nem található a rendszerben',
+                'code' => 419
+            ]
         ]
 
     ];

@@ -14,10 +14,14 @@
         /**
          * Display a listing of the resource.
          *
-         * @return \Illuminate\Http\Response
+         * @return \Illuminate\Http\JsonResponse
          */
         public function index () {
-            return "Működik";
+            $data = Payment::with('invoice')->all();
+
+            return response()->json([
+                'data' => $data
+            ]);
         }
 
         /**
@@ -33,7 +37,7 @@
          * Store a newly created resource in storage.
          *
          * @param \Illuminate\Http\Request $request
-         * @return \Illuminate\Http\Response
+         * @return \Illuminate\Http\JsonResponse
          */
         public function store (Request $request) {
             DB::beginTransaction();
@@ -43,24 +47,41 @@
             $payment->type = $request->type;
             $payment->payment_method = $request->payment_method;
             $payment->amount = $request->amount;
+            $payment->paid = $request->paid;
+            $payment->deadline = $request->deadline;
             $payment->save();
-            $this->create_invoice($payment->id); // a fizetési tranzakcióhoz számla generálása
+            if (isset($request->with_invoice) && $request->with_invoice) {
+                $this->create_invoice($payment->id); // a fizetési tranzakcióhoz számla generálása
+            }
 
             DB::commit();
+
+            return response()->json([
+                'message'     => trans("messages.store_success"),
+                'result_code' => 201
+            ]);
         }
 
         /**
          * Display the specified resource.
          *
          * @param int $id
-         * @return \Illuminate\Http\Response
+         * @return \Illuminate\Http\JsonResponse
          */
         public function show ($id) {
             $payment = Payment::where('id', $id)->first();
 
-            return response()->json([
-                'data' => $payment
-            ]);
+            if (isset($payment)) {
+                return response()->json([
+                    'data' => $payment
+                ]);
+            } else {
+                return response()->json([
+                    'message' => config("settings.error_codes.not_found_exception.message"),
+                    'result_code' => config("settings.error_codes.not_found_exception.code")
+                ]);
+            }
+
         }
 
         /**
@@ -88,16 +109,33 @@
          * Remove the specified resource from storage.
          *
          * @param int $id
-         * @return \Illuminate\Http\Response
+         * @return \Illuminate\Http\JsonResponse
+         * @throws \Exception
          */
         public function destroy ($id) {
-            $payment = Payment::find($id);
-            $payment->delete();
+            $payment = Payment::with('invoice')->find($id);
 
-            return response()->json([
-                'message'     => 'A törlés sikeres.',
-                'result_code' => 200
-            ]);
+            if (!empty($payment)) {
+                if (isset($payment->invoice)) {
+                    return response()->json([
+                        'message'     => config("settings.error_codes.has_invoice_delete_exception.message"),
+                        'result_code' => config("settings.error_codes.has_invoice_delete_exception.code")
+                    ]);
+                } else {
+                    $payment->delete();
+
+                    return response()->json([
+                        'message'     => trans("messages.delete_success"),
+                        'result_code' => 202
+                    ]);
+                }
+            } else {
+                return response()->json([
+                    'message'     => config("settings.error_codes.not_found_exception.message"),
+                    'result_code' => config("settings.error_codes.not_found_exception.code")
+                ]);
+            }
+
         }
 
         ######################

@@ -12,4 +12,8 @@ class Payment extends Model
     protected $fillable = ['partner_id', 'type', 'payment_method', 'amount', 'deadline', 'paid'];
 
     protected $dates = ['deleted_at'];
+
+    public function invoice () {
+        return $this->hasOne(Invoice::class, "payment_id", "id");
+    }
 }
