@@ -28,7 +28,7 @@ class Logger
         if (Auth::check()) {
             $user = Auth::user()->name;
         } else {
-            $user = "";
+            $user = "Nem bejelentkezett";
         }
         $message = [
             'ip' => $ip,
