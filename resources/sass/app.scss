@@ -6,3 +6,127 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $dark;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: $middle;
+    color: white;
+    text-decoration: none;
+    a {
+        color: white;
+    }
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+    color: white;
+    text-decoration: none;
+}
+
+#navbarDropdown:hover {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f4f3ec;
+}
+
+.card-header {
+    background-color: $middle;
+    color: white;
+    font-weight: bolder;
+}
+
+.card {
+    border: 1px solid $middle;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.btn-primary {
+    background-color: $dark;
+    color: white;
+    font-weight: bold;
+    border: 1px solid $dark;
+}
+.btn-primary:hover {
+    background-color: $middle;
+    border: 1px solid $middle;
+    font-style: italic;
+}
+
+.btn-link {
+    color: $light;
+}
+.btn-link:hover {
+    color: $middle;
+}
+
+#password,
+#email,
+#name,
+#password-confirm {
+    border-radius: 30px;
+}
+
+.main-header-button {
+    background-color: $dark;
+    color: white !important;
+    border-radius: 30px;
+    padding: 10px !important;
+}
+
+.main-header-button:hover {
+    background-color: $middle;
+    border-color: $middle;
+}
+
+nav.navbar {
+    height: 50px !important;
+}
+
+-v-card:hover {
+    background-color: red;
+}
+
+.infobox {
+    background-color: #f4f4ec;
+    border: 2px solid $dark;
+    border-top: 10px solid $dark;
+    padding: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #c72c41;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $middle;
+}
