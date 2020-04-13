@@ -8,6 +8,23 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import '@mdi/font/css/materialdesignicons.css'
+import Vuetify from "vuetify";
+import 'vuetify/dist/vuetify.min.css'
+import CKEditor from '@ckeditor/ckeditor5-vue'
+
+window.Vuetify = require('vuetify');
+
+Vue.use(CKEditor);
+Vue.use(Vuetify);
+
+export default new Vuetify({
+    icons: {
+        iconfont: 'mdi'
+    }
+})
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -29,4 +46,15 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    vuetify: new Vuetify({
+        theme: {
+            dark: true,
+            themes: {
+                dark: {
+                    background: '#6c757d',
+                    primary: '#801336'
+                }
+            }
+        }
+    })
 });
