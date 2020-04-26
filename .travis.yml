@@ -8,9 +8,12 @@ php:
 
 before_script:
   - echo "TerminusMq WebOffice build..."
+  - cp .env.travis .env
+  - mysql -e 'create database homestead_test;'
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
+  - php artisan migrate
   - nvm install 7.7.1
   - npm install npm@latest -g
   - npm install
@@ -21,3 +24,5 @@ script:
   - echo "PHP unit tests..."
   - vendor/bin/phpunit --coverage-text
 
+services:
+  - mysql
