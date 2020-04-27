@@ -1,0 +1,28 @@
+os:
+  - linux
+
+language: php
+
+php:
+  - '7.3'
+
+before_script:
+  - echo "TerminusMq WebOffice build..."
+  - cp .env.travis .env
+  - mysql -e 'create database homestead_test;'
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan key:generate
+  - php artisan migrate
+  - nvm install 7.7.1
+  - npm install npm@latest -g
+  - npm install
+  - npm rebuild node-sass
+
+script:
+  - npm run production
+  - echo "PHP unit tests..."
+  - vendor/bin/phpunit --coverage-text
+
+services:
+  - mysql

@@ -8,26 +8,23 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import Vue from 'vue'
-// import VueMaterial from 'vue-material'
-// import 'vue-material/dist/vue-material.min.css'
-//
-// Vue.use(VueMaterial);
 import '@mdi/font/css/materialdesignicons.css'
-import Vuetify from 'vuetify'
+import Vuetify from "vuetify";
 import 'vuetify/dist/vuetify.min.css'
-import CKEditor from '@ckeditor/ckeditor5-vue';
-
+import CKEditor from '@ckeditor/ckeditor5-vue'
 
 window.Vuetify = require('vuetify');
 
-Vue.use( CKEditor );
+Vue.use(CKEditor);
 Vue.use(Vuetify);
+
 export default new Vuetify({
     icons: {
-        iconfont: 'mdi',
-    },
+        iconfont: 'mdi'
+    }
 })
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -36,12 +33,10 @@ export default new Vuetify({
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('dashboard', require('./components/Dashboard').default);
-Vue.component('payments', require('./components/Payments').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -51,5 +46,15 @@ Vue.component('payments', require('./components/Payments').default);
 
 const app = new Vue({
     el: '#app',
-    vuetify: new Vuetify()
-}).$mount('#app');
+    vuetify: new Vuetify({
+        theme: {
+            dark: true,
+            themes: {
+                dark: {
+                    background: '#6c757d',
+                    primary: '#801336'
+                }
+            }
+        }
+    })
+});
