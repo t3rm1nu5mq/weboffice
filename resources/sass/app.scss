@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import "./fonts";
 
 // Variables
 @import './variables';
@@ -12,7 +12,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: $dark;
+    background-color: $light;
     color: white;
     text-align: center;
 }
@@ -81,15 +81,17 @@ body {
 }
 
 .main-header-button {
-    background-color: $dark;
+    background-color: #65b1a6;
     color: white !important;
     border-radius: 30px;
     padding: 10px !important;
+    transition: background-color 2s;
 }
 
 .main-header-button:hover {
     background-color: $middle;
     border-color: $middle;
+    font-style: italic;
 }
 
 nav.navbar {
@@ -122,11 +124,89 @@ nav.navbar {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #c72c41;
+    background: $semidark;
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: $middle;
+}
+
+.welcome_header {
+    background-image: url('/images/header_background.JPG');
+    width: 100vw;
+    height: 75vh;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    border-bottom: 5px solid $light;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+}
+
+.welcome_header_text {
+    font-size: 48px;
+    padding-top: 37vh;
+    font-style: oblique;
+    font-variant-caps: small-caps;
+    color: cornsilk;
+    font-family: 'Holtwood One SC';
+    text-shadow: 3px 2px $dark;
+}
+
+.navbar-logo {
+    width: 20%;
+    border-radius: 30px
+}
+
+.navbar-logo-div {
+    position: relative;
+    left: 30px;
+    top: 0;
+}
+
+.navbar-logo-keyboard {
+    position: absolute;
+    z-index: 10;
+    top: 35px;
+    left: 25px;
+    width: 10%;
+    transform: rotate(-45deg);
+}
+
+#navbarBackground:hover #navbarKeyboard {
+    animation: spin 4s linear infinite;
+}
+
+.navbar-logo-background {
+    position: relative;
+    z-index: 12;
+    top: 0;
+    left: 0;
+    width: 17%;
+}
+
+//@-moz-keyframes spin { 100% { -moz-transform: rotate(-315deg); } }
+//@-webkit-keyframes spin { 100% { -webkit-transform: rotate(-315deg); } }
+//@keyframes spin { 100% { -webkit-transform: rotate(-315deg); transform:rotate(-315deg); } }
+@keyframes spin {
+    from {
+        -ms-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    to {
+        -ms-transform: rotate(-405deg);
+        -moz-transform: rotate(-405deg);
+        -webkit-transform: rotate(-405deg);
+        -o-transform: rotate(-405deg);
+        transform: rotate(-405deg);
+    }
 }

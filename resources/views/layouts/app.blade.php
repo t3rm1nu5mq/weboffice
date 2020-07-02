@@ -77,6 +77,7 @@
         </main>
     </div>
 
-    <footer class="footer">&copy; 2019 - All rights reserved.<br>Developed by <b>TerminusMq</b></footer>
+    @include('footer')
 </body>
 </html>
+we
