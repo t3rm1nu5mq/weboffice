@@ -8,13 +8,15 @@
 @import '~bootstrap/scss/bootstrap';
 
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
     background-color: $light;
     color: white;
     text-align: center;
+    //position: absolute;
+    //right: 0;
+    //bottom: 0;
+    //left: 0;
+
 }
 
 nav {
@@ -117,7 +119,9 @@ nav.navbar {
     border-radius: 10px;
 }
 /* Track */
-::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
+    background: grey;
+    border: 1px solid grey;
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
 }
@@ -213,7 +217,6 @@ nav.navbar {
 
 html, body {
     background-color: #fff;
-    color: #636b6f;
     font-family: 'Nunito', sans-serif;
     font-weight: 200;
     height: 100vh;
@@ -256,4 +259,46 @@ html, body {
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.section-header {
+    background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(78, 123, 176, 0.9654236694677871) 50%, rgba(0, 212, 255, 1) 100%);
+    background-size: 400% 400%;
+    width: 20%;
+    height: 5px;
+    border-radius: 30px;
+    margin-top: 0px;
+    animation: gradient-background 5s ease infinite;
+}
+
+@keyframes gradient-background {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.section-card {
+    border: 2px solid $light;
+    border-radius: 10px;
+    margin: 10px;
+    max-width: 23%;
+    padding: 5px;
+}
+
+.section-card:hover {
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    border-color: $semidark;
+}
+
+.section-header-image {
+    width: 30%;
+    border-radius: 30%;
 }
