@@ -11044,7 +11044,7 @@ body::-webkit-scrollbar-track {
     font-style: oblique;
     font-variant-caps: small-caps;
     color: cornsilk;
-    font-family: "Holtwood One SC";
+    font-family: "Holtwood One SC", serif;
     text-shadow: 3px 2px #7162A2;
 }
 
@@ -11154,14 +11154,14 @@ body {
     width: 20%;
     height: 5px;
     border-radius: 30px;
-    margin-top: 0px;
+    margin-top: 0;
     -webkit-animation: gradient-background 5s ease infinite;
     animation: gradient-background 5s ease infinite;
 }
 
 @-webkit-keyframes gradient-background {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
 
     50% {
@@ -11169,13 +11169,13 @@ body {
     }
 
     100% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
 }
 
 @keyframes gradient-background {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
 
     50% {
@@ -11183,7 +11183,7 @@ body {
     }
 
     100% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
 }
 
@@ -11196,12 +11196,65 @@ body {
 }
 
 .section-card:hover {
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.3);
     border-color: #4E7BB0;
 }
 
 .section-header-image {
     width: 30%;
     border-radius: 30%;
+}
+
+.logos {
+    width: 50px;
+    height: 50px;
+}
+
+.logos-col {
+    display: inline-block;
+    margin: 20px;
+}
+
+.cookie-consent-dialog {
+    width: 300px;
+    height: 330px;
+    background-color: rgba(47, 145, 185, 0.7);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-image: url("/images/display.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    z-index: 2;
+}
+
+.cookie-consent__message {
+    position: absolute;
+    padding: 40px;
+    color: white;
+}
+
+.cookie-consent__agree {
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 75px;
+    border-radius: 30px;
+    border-color: #894671;
+    color: white;
+    background-color: rgba(47, 145, 185, 0.9);
+}
+
+.cookie-consent__agree:hover {
+    background-color: #894671;
+    font-style: oblique;
+}
+
+#loader {
+    width: 280px;
+    height: 210px;
+    margin-left: 10px;
+    margin-top: 16px;
 }
 

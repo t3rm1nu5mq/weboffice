@@ -127,6 +127,7 @@
             </div>
         </div>
     </div>
+    @include('cookieConsent::index')
     <div class="row" style="position: relative; top: 85vh; display: block; text-align: center; margin: 0px">
         @include('footer')
     </div>

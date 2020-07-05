@@ -18,7 +18,8 @@
         "laravel/passport": "^8.0",
         "laravel/socialite": "^4.3",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.0"
+        "laravel/ui": "^2.0",
+        "spatie/laravel-cookie-consent": "^2.12"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
