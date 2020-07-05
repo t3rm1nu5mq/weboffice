@@ -11,19 +11,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <style>
-        .logos {
-            width: 50px;
-            height: 50px;
-        }
-
-        .logos-col {
-            display: inline-block;
-            margin: 20px;
-        }
-    </style>
-
 </head>
 
 <body>
