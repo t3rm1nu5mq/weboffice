@@ -61,6 +61,7 @@ body {
     color: white;
     font-weight: bold;
     border: 1px solid $dark;
+    border-radius: 30px;
 }
 .btn-primary:hover {
     background-color: $middle;
@@ -69,10 +70,16 @@ body {
 }
 
 .btn-link {
-    color: $light;
+    color: white;
 }
 .btn-link:hover {
-    color: $middle;
+    color: white;
+    text-decoration: none;
+    font-style: oblique;
+    font-weight: bold;
+    border: 2px solid $darkest;
+    border-radius: 30px;
+    margin-top: 10px;
 }
 
 #password,
@@ -80,6 +87,10 @@ body {
 #name,
 #password-confirm {
     border-radius: 30px;
+
+    &:focus {
+        border: 2px solid $darkest;
+    }
 }
 
 .main-header-button {
@@ -213,7 +224,6 @@ body::-webkit-scrollbar-track {
 }
 
 html, body {
-    background-color: #fff;
     font-family: 'Nunito', sans-serif;
     font-weight: 200;
     height: 100vh;
@@ -353,4 +363,67 @@ html, body {
     margin-top: 16px;
 }
 
+/////////////////////
+// custom checkbox //
+/////////////////////
+.custom_checkbox_container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.custom_checkbox_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+.custom_checkbox_container:hover input ~ .checkmark {
+    background-color: $dark;
+}
+
+.custom_checkbox_container input:checked ~ .checkmark {
+    background-color: $darkest;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom_checkbox_container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.custom_checkbox_container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/// END OF CUSTOM CHECKBOX ///
 

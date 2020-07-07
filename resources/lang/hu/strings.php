@@ -11,7 +11,11 @@ return [
     |
     */
 
-    'login' => 'Bejelentkezés',
-    'register' => 'Regisztráció'
+    'login'           => 'Bejelentkezés',
+    'register'        => 'Regisztráció',
+    'email_address'   => 'E-mail cím',
+    'password'        => 'Jelszó',
+    'forgot_password' => 'Elfelejtette a jelszavát?',
+    'remember_me'     => 'Emlékezzen rám'
 
 ];
