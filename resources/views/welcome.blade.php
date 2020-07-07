@@ -83,7 +83,7 @@
             <div class="row" style="position: relative; top: 75vh; margin-top: 20px">
                 <div class="col-12" style="text-align: center">
                     <div class="row">
-                        <div class="col-12 col-md-4 col-lg-3 section-card">
+                        <div class="col-12 col-sm-6 col-lg-3 section-card">
                             <img src="/icons/form.png" class="section-header-image"><br>
                             <b>Igényfelmérés</b>
                             <hr class="section-header" style="height: 2px">
@@ -91,7 +91,7 @@
                             igényeit.
                             A megfogalmazódó kérdésekre közösen keresünk megoldást.
                         </div>
-                        <div class="col-12 col-md-4 col-lg-3 section-card">
+                        <div class="col-12 col-sm-6 col-lg-3 section-card">
                             <img src="/icons/designing.png" class="section-header-image"><br>
                             <b>Tervezés</b>
                             <hr class="section-header" style="height: 2px">
@@ -100,7 +100,7 @@
                             mérföldkövekkel.
                             Ezek mellett derül ki az árajánlat is.
                         </div>
-                        <div class="col-12 col-md-4 col-lg-3 section-card">
+                        <div class="col-12 col-sm-6 col-lg-3 section-card">
                             <img src="/icons/development.png" class="section-header-image"><br>
                             <b>Fejlesztés</b>
                             <hr class="section-header" style="height: 2px">
@@ -108,7 +108,7 @@
                             állandó kapcsolattartás történik.
                             A fejlesztés végső szakaszában történik a tesztelés és esetleges javítás is.
                         </div>
-                        <div class="col-12 col-md-4 col-lg-3 section-card">
+                        <div class="col-12 col-sm-6 col-lg-3 section-card">
                             <img src="/icons/handover.png" class="section-header-image"><br>
                             <b>Átadás</b>
                             <hr class="section-header" style="height: 2px">
