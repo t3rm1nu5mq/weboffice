@@ -63,7 +63,7 @@
 
     <div class="row" style="margin: 0px">
         <div class="container" style="padding-bottom: 100px">
-            <div class="row">
+            <div class="row welcome_header_row">
                 <div class="col-12 welcome_header">
                     <p class="welcome_header_text">
                         Web- és mobil alkalmazásfejlesztés<br>elképzeléstől a megvalósításig
@@ -82,7 +82,7 @@
             </div>
             <div class="row" style="position: relative; top: 75vh; margin-top: 20px">
                 <div class="col-12" style="text-align: center">
-                    <div class="row">
+                    <div class="row section-card-row justify-content-center" style="text-align: center">
                         <div class="col-12 col-sm-6 col-lg-3 section-card">
                             <img src="/icons/form.png" class="section-header-image"><br>
                             <b>Igényfelmérés</b>
