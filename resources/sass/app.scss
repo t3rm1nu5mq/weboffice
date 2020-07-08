@@ -428,7 +428,7 @@ html, body {
 /// END OF CUSTOM CHECKBOX ///
 @media (max-width: 640px) {
     .welcome_header_text {
-        font-size: 40px;
+        font-size: 36px;
     }
     .welcome_header_row {
         margin-right: -35px;
@@ -452,5 +452,6 @@ html, body {
     }
     .section-card {
         max-width: none;
+        margin-right: 35px;
     }
 }
