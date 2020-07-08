@@ -454,4 +454,7 @@ html, body {
         max-width: none;
         margin-right: 35px;
     }
+    .login-dropdown {
+        transform: translate3d(-300px, 0px, 0px) !important;
+    }
 }

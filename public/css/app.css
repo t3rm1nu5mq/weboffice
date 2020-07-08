@@ -11350,13 +11350,17 @@ body {
     border-bottom-right-radius: 50% 20%;
   }
 
-  .row {
-    margin-left: 0 !important;
-  }
+    .row {
+        margin-left: 0 !important;
+    }
 
-  .section-card {
-    max-width: none;
-    margin-right: 35px;
-  }
+    .section-card {
+        max-width: none;
+        margin-right: 35px;
+    }
+
+    .login-dropdown {
+        transform: translate3d(-300px, 0px, 0px) !important;
+    }
 }
 

@@ -45,7 +45,7 @@
                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Bejelentkezés
                     </button>
-                    <div id="myDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton"
+                    <div id="myDropdown" class="dropdown-menu login-dropdown" aria-labelledby="dropdownMenuButton"
                          style="background-color: rgba(0, 0, 0, 0); border: none">
                         @include('auth.login')
                     </div>
