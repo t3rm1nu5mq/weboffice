@@ -11340,14 +11340,14 @@ body {
     background-image: url("/images/header_background.JPG");
     width: 100vw;
     height: 75vh;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    text-align: center;
-    border-bottom: 5px solid #3DA2B0;
-    border-bottom-left-radius: 50% 20%;
-    border-bottom-right-radius: 50% 20%;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      text-align: center;
+      border-bottom: 5px solid #3DA2B0;
+      border-bottom-left-radius: 50% 20%;
+      border-bottom-right-radius: 50% 20%;
   }
 
     .row {
@@ -11355,12 +11355,17 @@ body {
     }
 
     .section-card {
-        max-width: none;
-        margin-right: 35px;
+        max-width: 95vw;
+        margin-right: 50px;
+        margin-left: 20px;
     }
 
     .login-dropdown {
         transform: translate3d(-300px, 0px, 0px) !important;
+    }
+
+    .logos-row {
+        margin-right: 15px !important;
     }
 }
 

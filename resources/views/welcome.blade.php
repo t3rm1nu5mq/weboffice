@@ -127,7 +127,7 @@
             </div>
             <hr class="section-header">
         </div>
-        <div class="row" style="position: relative; top: 85vh; display: block; text-align: center">
+        <div class="row logos-row" style="position: relative; top: 85vh; display: block; text-align: center">
             <div class="col-1 logos-col">
                 <img src="/icons/html5.svg" class="logos">
             </div>

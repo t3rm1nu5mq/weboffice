@@ -451,10 +451,14 @@ html, body {
         margin-left: 0 !important;
     }
     .section-card {
-        max-width: none;
-        margin-right: 35px;
+        max-width: 95vw;
+        margin-right: 50px;
+        margin-left: 20px;
     }
     .login-dropdown {
         transform: translate3d(-300px, 0px, 0px) !important;
+    }
+    .logos-row {
+        margin-right: 15px !important;
     }
 }
