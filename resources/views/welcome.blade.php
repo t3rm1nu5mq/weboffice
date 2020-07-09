@@ -60,7 +60,6 @@
             </div>
         @endif
     </div>
-
     <div class="row" style="margin: 0px">
         <div class="container" style="padding-bottom: 100px">
             <div class="row welcome_header_row">
@@ -152,7 +151,53 @@
         </div>
     </div>
     @include('cookieConsent::index')
-    <div class="row" style="position: relative; top: 85vh; display: block; text-align: center; margin: 0px">
+    <div class="row" style="position: relative; top: 90vh; margin: 0px; margin-bottom: 20px">
+        <section id="contact" style="height: auto">
+            <div class="row">
+                <div class="col-12" style="text-align: center;">
+                    <h1>Felkeltettem az érdeklődését?</h1>
+                    <h4>A lenti űrlap kitöltésével kapcsolatba léphet velem.</h4>
+                </div>
+            </div>
+            <div class="contact-section">
+                <div class="container">
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 form-line">
+                                <div class="form-group">
+                                    <label for="exampleInputUsername">Az Ön neve</label>
+                                    <input type="text" class="form-control" id="" placeholder=" Az én nevem">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail">Az Ön e-mail címe</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail"
+                                           placeholder=" azennevem@azenoldalam.hu">
+                                </div>
+                                <div class="form-group">
+                                    <label for="telephone">Az Ön telefonszáma</label>
+                                    <input type="tel" class="form-control" id="telephone"
+                                           placeholder=" Mobil vagy vezetékes szám">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <div class="form-group">
+                                    <label for="description"> Üzenet</label>
+                                    <textarea class="form-control" id="description"
+                                              placeholder="Röviden írja le megkeresése tárgyát"></textarea>
+                                </div>
+                                <div>
+                                    <button style="width: fit-content" type="button" class="btn btn-default submit"><i
+                                            class="fa fa-paper-plane" aria-hidden="true"></i> Üzenet küldése
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </section>
+    </div>
+    <div class="row" style="position: relative; top: 85.5vh; display: block; text-align: center; margin: 0px">
         @include('footer')
     </div>
 </div>
