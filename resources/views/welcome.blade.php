@@ -198,7 +198,7 @@
             </div>
         </section>
     </div>
-    <div class="row" style="position: relative; top: 85.5vh; display: block; text-align: center; margin: 0px">
+    <div class="row" style="position: relative; top: 87vh; display: block; text-align: center; margin: 0px">
         @include('footer')
     </div>
 </div>
