@@ -8,6 +8,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -190,11 +191,11 @@
                                             class="fa fa-paper-plane" aria-hidden="true"></i> Üzenet küldése
                                     </button>
                                 </div>
-
                             </div>
                         </div>
                     </form>
                 </div>
+            </div>
         </section>
     </div>
     <div class="row" style="position: relative; top: 85.5vh; display: block; text-align: center; margin: 0px">
