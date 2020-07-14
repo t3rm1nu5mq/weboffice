@@ -3,6 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mobil és webalkalmazás fejlesztés elképzeléstől a megvalósításig">
+    <meta name="keywords" content="weboldal készítés, mobil alkalmazás készítés, ios, android, laravel, php">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="1 Week">
+    <meta name="distribution" content="local">
+    <meta name="language" content="HU">
+    <meta name="rating" content="general">
 
     <title>TerminusMq Codes</title>
 
