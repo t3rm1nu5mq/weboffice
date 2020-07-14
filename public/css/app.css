@@ -11233,18 +11233,18 @@ body {
 }
 
 .cookie-consent-dialog {
-  width: 300px;
-  height: 330px;
-  background-color: rgba(47, 145, 185, 0.7);
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  background-image: url("/images/display.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 30px;
-  z-index: 2;
+    width: 300px;
+    height: 330px;
+    background-color: rgba(47, 145, 185, 0.7);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-image: url("/images/display.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 30px;
+    z-index: 2;
 }
 
 .cookie-consent__message {
@@ -11343,7 +11343,7 @@ body {
   }
 
   .welcome_header {
-      background-image: url("/images/header_background.JPG");
+      background-image: url("/images/header_background.webp");
       width: 100vw;
       height: 75vh;
       background-position: bottom;
