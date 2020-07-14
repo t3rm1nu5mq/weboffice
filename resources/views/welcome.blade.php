@@ -14,6 +14,7 @@
     <title>TerminusMq Codes</title>
 
     <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -44,9 +45,9 @@
     <div class="row">
         <div class="top-left links">
             <div id="navbarBackground" class="navbar-logo-div">
-                <img id="navbarKeyboard" class="navbar-logo navbar-logo-keyboard" src="/images/uj_billentyuzet.webp"
+                <img id="navbarKeyboard" class="navbar-logo navbar-logo-keyboard" src="/images/uj_billentyuzet.png"
                      alt="logo">
-                <img class="navbar-logo navbar-logo-background" src="/images/logo3.webp" alt="logo">
+                <img class="navbar-logo navbar-logo-background" src="/images/logo3.png" alt="logo">
             </div>
         </div>
         @if (Route::has('login'))
@@ -94,7 +95,7 @@
                 <div class="col-12" style="text-align: center">
                     <div class="row section-card-row justify-content-center" style="text-align: center">
                         <div class="col-12 col-sm-6 col-lg-3 section-card">
-                            <img src="/icons/form.webp" class="section-header-image"><br>
+                            <img src="/icons/form.png" class="section-header-image"><br>
                             <b>Igényfelmérés</b>
                             <hr class="section-header" style="height: 2px">
                             A kapcsolatfelvételt követően egy részletes megbeszélés során megismerem elképzeléseit,
@@ -102,7 +103,7 @@
                             A megfogalmazódó kérdésekre közösen keresünk megoldást.
                         </div>
                         <div class="col-12 col-sm-6 col-lg-3 section-card">
-                            <img src="/icons/designing.webp" class="section-header-image"><br>
+                            <img src="/icons/designing.png" class="section-header-image"><br>
                             <b>Tervezés</b>
                             <hr class="section-header" style="height: 2px">
                             Az igényfelmérés során elmondottak alapján készül a projektről egy előzetes terv, mely
@@ -111,7 +112,7 @@
                             Ezek mellett derül ki az árajánlat is.
                         </div>
                         <div class="col-12 col-sm-6 col-lg-3 section-card">
-                            <img src="/icons/development.webp" class="section-header-image"><br>
+                            <img src="/icons/development.png" class="section-header-image"><br>
                             <b>Fejlesztés</b>
                             <hr class="section-header" style="height: 2px">
                             A fejlesztés az előre elfogadott beosztás alapján történik. A folyamat nyomon követhető,
@@ -119,7 +120,7 @@
                             A fejlesztés végső szakaszában történik a tesztelés és esetleges javítás is.
                         </div>
                         <div class="col-12 col-sm-6 col-lg-3 section-card">
-                            <img src="/icons/handover.webp" class="section-header-image"><br>
+                            <img src="/icons/handover.png" class="section-header-image"><br>
                             <b>Átadás</b>
                             <hr class="section-header" style="height: 2px">
                             Végül az elkészült projekt átadásra kerül az Ön részére.
