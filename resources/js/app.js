@@ -7,6 +7,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+Vue.component('contact-form', require('./components/ContactForm').default)
 
 import '@mdi/font/css/materialdesignicons.css'
 import Vuetify from "vuetify";

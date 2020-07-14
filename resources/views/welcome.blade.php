@@ -13,6 +13,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
@@ -30,7 +33,7 @@
 </head>
 
 <body>
-<div class="position-ref full-height">
+<div class="position-ref full-height" id="app">
     <div class="row">
         <div class="top-left links">
             <div id="navbarBackground" class="navbar-logo-div">
@@ -162,38 +165,7 @@
             </div>
             <div class="contact-section">
                 <div class="container">
-                    <form>
-                        <div class="row">
-                            <div class="col-sm-12 col-md-6 form-line">
-                                <div class="form-group">
-                                    <label for="exampleInputUsername">Az Ön neve</label>
-                                    <input type="text" class="form-control" id="" placeholder=" Az én nevem">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail">Az Ön e-mail címe</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail"
-                                           placeholder=" azennevem@azenoldalam.hu">
-                                </div>
-                                <div class="form-group">
-                                    <label for="telephone">Az Ön telefonszáma</label>
-                                    <input type="tel" class="form-control" id="telephone"
-                                           placeholder=" Mobil vagy vezetékes szám">
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6">
-                                <div class="form-group">
-                                    <label for="description"> Üzenet</label>
-                                    <textarea class="form-control" id="description"
-                                              placeholder="Röviden írja le megkeresése tárgyát"></textarea>
-                                </div>
-                                <div>
-                                    <button style="width: fit-content" type="button" class="btn btn-default submit"><i
-                                            class="fa fa-paper-plane" aria-hidden="true"></i> Üzenet küldése
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    <contact-form></contact-form>
                 </div>
             </div>
         </section>

@@ -30,3 +30,5 @@
     Route::post('/additional_data', ['uses' => 'API\AdditionalDataController@get']);
 
     Route::get('/partners_count', ['uses' => 'API\PartnerController@partners_count']);
+
+    Route::post('/send_contact_message', ['uses' => 'API\MessagingController@sendContactMessage']);

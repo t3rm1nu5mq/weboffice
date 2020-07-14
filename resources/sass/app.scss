@@ -85,7 +85,9 @@ body {
 #password,
 #email,
 #name,
-#password-confirm {
+#password-confirm,
+#telephone,
+#message {
     border-radius: 30px;
 
     &:focus {

@@ -10965,15 +10965,19 @@ body {
 #password,
 #email,
 #name,
-#password-confirm {
-  border-radius: 30px;
+#password-confirm,
+#telephone,
+#message {
+    border-radius: 30px;
 }
 
 #password:focus,
 #email:focus,
 #name:focus,
-#password-confirm:focus {
-  border: 2px solid #894671;
+#password-confirm:focus,
+#telephone:focus,
+#message:focus {
+    border: 2px solid #894671;
 }
 
 .main-header-button {

@@ -1990,25 +1990,123 @@ module.exports = {
   isStream: isStream,
   isURLSearchParams: isURLSearchParams,
   isStandardBrowserEnv: isStandardBrowserEnv,
-  forEach: forEach,
-  merge: merge,
-  deepMerge: deepMerge,
-  extend: extend,
-  trim: trim
+    forEach: forEach,
+    merge: merge,
+    deepMerge: deepMerge,
+    extend: extend,
+    trim: trim
 };
 
 
-/***/ }),
+            /***/
+        }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+        /***/
+        "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ContactForm.vue?vue&type=script&lang=js&":
+        /*!**********************************************************************************************************************************************************************!*\
+          !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ContactForm.vue?vue&type=script&lang=js& ***!
+          \**********************************************************************************************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+            /* harmony default export */
+            __webpack_exports__["default"] = ({
+                name: "ContactForm",
+                data: function data() {
+                    return {
+                        sending: false,
+                        contactData: {
+                            name: '',
+                            email: '',
+                            phone: '',
+                            message: ''
+                        },
+                        name: ''
+                    };
+                },
+                methods: {
+                    send: function send() {
+                        var that = this;
+                        this.sending = true;
+                        axios.post('/api/send_contact_message', that.contactData).then(function (response) {
+                            that.name = response.data.name;
+                            that.contactData = {
+                                name: '',
+                                email: '',
+                                phone: '',
+                                message: ''
+                            }, that.sending = false;
+                        })["catch"](function (error) {
+                            console.log(error);
+                            that.sending = false;
+                        });
+                    }
+                }
+            });
+
+            /***/
+        }),
+
+        /***/
+        "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
+        /*!***************************************************************************************************************************************************************************!*\
+          !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
+          \***************************************************************************************************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -37728,7 +37826,7 @@ function addStyle (obj, options) {
 	// If a transform function was defined, run it on the css
 	if (options.transform && obj.css) {
 	    result = typeof options.transform === 'function'
-		 ? options.transform(obj.css) 
+		 ? options.transform(obj.css)
 		 : options.transform.default(obj.css);
 
 	    if (result) {
@@ -38040,25 +38138,251 @@ __webpack_require__(/*! setimmediate */ "./node_modules/setimmediate/setImmediat
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
 exports.setImmediate = (typeof self !== "undefined" && self.setImmediate) ||
-                       (typeof global !== "undefined" && global.setImmediate) ||
-                       (this && this.setImmediate);
-exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
-                         (typeof global !== "undefined" && global.clearImmediate) ||
-                         (this && this.clearImmediate);
+    (typeof global !== "undefined" && global.setImmediate) ||
+    (this && this.setImmediate);
+                exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
+                    (typeof global !== "undefined" && global.clearImmediate) ||
+                    (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+                /* WEBPACK VAR INJECTION */
+            }.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
-/***/ }),
+            /***/
+        }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
-  \*******************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+        /***/
+        "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ContactForm.vue?vue&type=template&id=76db242e&scoped=true&":
+        /*!**************************************************************************************************************************************************************************************************************************!*\
+          !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ContactForm.vue?vue&type=template&id=76db242e&scoped=true& ***!
+          \**************************************************************************************************************************************************************************************************************************/
+        /*! exports provided: render, staticRenderFns */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */
+            __webpack_require__.d(__webpack_exports__, "render", function () {
+                return render;
+            });
+            /* harmony export (binding) */
+            __webpack_require__.d(__webpack_exports__, "staticRenderFns", function () {
+                return staticRenderFns;
+            });
+            var render = function () {
+                var _vm = this
+                var _h = _vm.$createElement
+                var _c = _vm._self._c || _h
+                return _c("div", [
+                    _vm.name == ""
+                        ? _c("form", [
+                            _c("div", {staticClass: "row"}, [
+                                _c("div", {staticClass: "col-sm-12 col-md-6 form-line"}, [
+                                    _c("div", {staticClass: "form-group"}, [
+                                        _c("label", {attrs: {for: "name"}}, [_vm._v("Az Ön neve")]),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                            directives: [
+                                                {
+                                                    name: "model",
+                                                    rawName: "v-model",
+                                                    value: _vm.contactData.name,
+                                                    expression: "contactData.name"
+                                                }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: {
+                                                id: "name",
+                                                type: "text",
+                                                placeholder: " Az én nevem"
+                                            },
+                                            domProps: {value: _vm.contactData.name},
+                                            on: {
+                                                input: function ($event) {
+                                                    if ($event.target.composing) {
+                                                        return
+                                                    }
+                                                    _vm.$set(_vm.contactData, "name", $event.target.value)
+                                                }
+                                            }
+                                        })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", {staticClass: "form-group"}, [
+                                        _c("label", {attrs: {for: "email"}}, [
+                                            _vm._v("Az Ön e-mail címe")
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                            directives: [
+                                                {
+                                                    name: "model",
+                                                    rawName: "v-model",
+                                                    value: _vm.contactData.email,
+                                                    expression: "contactData.email"
+                                                }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: {
+                                                type: "email",
+                                                id: "email",
+                                                placeholder: " azennevem@azenoldalam.hu"
+                                            },
+                                            domProps: {value: _vm.contactData.email},
+                                            on: {
+                                                input: function ($event) {
+                                                    if ($event.target.composing) {
+                                                        return
+                                                    }
+                                                    _vm.$set(_vm.contactData, "email", $event.target.value)
+                                                }
+                                            }
+                                        })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", {staticClass: "form-group"}, [
+                                        _c("label", {attrs: {for: "telephone"}}, [
+                                            _vm._v("Az Ön telefonszáma")
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                            directives: [
+                                                {
+                                                    name: "model",
+                                                    rawName: "v-model",
+                                                    value: _vm.contactData.phone,
+                                                    expression: "contactData.phone"
+                                                }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: {
+                                                type: "tel",
+                                                id: "telephone",
+                                                placeholder: " Mobil vagy vezetékes szám"
+                                            },
+                                            domProps: {value: _vm.contactData.phone},
+                                            on: {
+                                                input: function ($event) {
+                                                    if ($event.target.composing) {
+                                                        return
+                                                    }
+                                                    _vm.$set(_vm.contactData, "phone", $event.target.value)
+                                                }
+                                            }
+                                        })
+                                    ])
+                                ]),
+                                _vm._v(" "),
+                                _c("div", {staticClass: "col-sm-12 col-md-6"}, [
+                                    _c("div", {staticClass: "form-group"}, [
+                                        _c("label", {attrs: {for: "message"}}, [_vm._v(" Üzenet")]),
+                                        _vm._v(" "),
+                                        _c("textarea", {
+                                            directives: [
+                                                {
+                                                    name: "model",
+                                                    rawName: "v-model",
+                                                    value: _vm.contactData.message,
+                                                    expression: "contactData.message"
+                                                }
+                                            ],
+                                            staticClass: "form-control",
+                                            attrs: {
+                                                id: "message",
+                                                placeholder: "Röviden írja le megkeresése tárgyát"
+                                            },
+                                            domProps: {value: _vm.contactData.message},
+                                            on: {
+                                                input: function ($event) {
+                                                    if ($event.target.composing) {
+                                                        return
+                                                    }
+                                                    _vm.$set(_vm.contactData, "message", $event.target.value)
+                                                }
+                                            }
+                                        })
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", [
+                                        _c(
+                                            "button",
+                                            {
+                                                staticClass: "btn btn-default submit",
+                                                staticStyle: {width: "fit-content"},
+                                                attrs: {type: "button"},
+                                                on: {click: _vm.send}
+                                            },
+                                            [
+                                                !_vm.sending
+                                                    ? _c("i", {
+                                                        staticClass: "fa fa-paper-plane",
+                                                        attrs: {"aria-hidden": "true"}
+                                                    })
+                                                    : _vm._e(),
+                                                _vm._v(" "),
+                                                _vm.sending
+                                                    ? _c("i", {staticClass: "fa fa-spinner fa-spin"})
+                                                    : _vm._e(),
+                                                _vm._v("Üzenet küldése\n                    ")
+                                            ]
+                                        )
+                                    ])
+                                ])
+                            ])
+                        ])
+                        : _vm._e(),
+                    _vm._v(" "),
+                    _vm.name !== ""
+                        ? _c("div", [
+                            _c("div", {staticClass: "row"}, [
+                                _c(
+                                    "div",
+                                    {
+                                        staticClass: "col-12",
+                                        staticStyle: {"font-size": "36px", "text-align": "center"}
+                                    },
+                                    [
+                                        _vm._v(
+                                            "\n                Kedves " +
+                                            _vm._s(_vm.name) +
+                                            "!\n            "
+                                        )
+                                    ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                    "div",
+                                    {
+                                        staticClass: "col-12",
+                                        staticStyle: {"font-size": "16px", "text-align": "center"}
+                                    },
+                                    [
+                                        _vm._v(
+                                            "\n                Üzenetét megkaptam. Az Ön által megadott elérhetőségeken rövidesen keresni fogom.\n            "
+                                        )
+                                    ]
+                                )
+                            ])
+                        ])
+                        : _vm._e()
+                ])
+            }
+            var staticRenderFns = []
+            render._withStripped = true
+
+
+            /***/
+        }),
+
+        /***/
+        "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
+        /*!*******************************************************************************************************************************************************************************************************************!*\
+          !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
+          \*******************************************************************************************************************************************************************************************************************/
+        /*! exports provided: render, staticRenderFns */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 var render = function() {
@@ -91812,7 +92136,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+            window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+            Vue.component('contact-form', __webpack_require__(/*! ./components/ContactForm */ "./resources/js/components/ContactForm.vue")["default"]);
 
 
 
@@ -91902,14 +92227,101 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     encrypted: true
 // });
 
-/***/ }),
+            /***/
+        }),
 
-/***/ "./resources/js/components/ExampleComponent.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/components/ExampleComponent.vue ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+        /***/
+        "./resources/js/components/ContactForm.vue":
+        /*!*************************************************!*\
+          !*** ./resources/js/components/ContactForm.vue ***!
+          \*************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */
+            var _ContactForm_vue_vue_type_template_id_76db242e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ContactForm.vue?vue&type=template&id=76db242e&scoped=true& */ "./resources/js/components/ContactForm.vue?vue&type=template&id=76db242e&scoped=true&");
+            /* harmony import */
+            var _ContactForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ContactForm.vue?vue&type=script&lang=js& */ "./resources/js/components/ContactForm.vue?vue&type=script&lang=js&");
+            /* empty/unused harmony star reexport *//* harmony import */
+            var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+            /* normalize component */
+
+            var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+                _ContactForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+                _ContactForm_vue_vue_type_template_id_76db242e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+                _ContactForm_vue_vue_type_template_id_76db242e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+                false,
+                null,
+                "76db242e",
+                null
+            )
+
+            /* hot reload */
+            if (false) {
+                var api;
+            }
+            component.options.__file = "resources/js/components/ContactForm.vue"
+            /* harmony default export */
+            __webpack_exports__["default"] = (component.exports);
+
+            /***/
+        }),
+
+        /***/
+        "./resources/js/components/ContactForm.vue?vue&type=script&lang=js&":
+        /*!**************************************************************************!*\
+          !*** ./resources/js/components/ContactForm.vue?vue&type=script&lang=js& ***!
+          \**************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */
+            var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ContactForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ContactForm.vue?vue&type=script&lang=js&");
+            /* empty/unused harmony star reexport */ /* harmony default export */
+            __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+            /***/
+        }),
+
+        /***/
+        "./resources/js/components/ContactForm.vue?vue&type=template&id=76db242e&scoped=true&":
+        /*!********************************************************************************************!*\
+          !*** ./resources/js/components/ContactForm.vue?vue&type=template&id=76db242e&scoped=true& ***!
+          \********************************************************************************************/
+        /*! exports provided: render, staticRenderFns */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */
+            var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactForm_vue_vue_type_template_id_76db242e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ContactForm.vue?vue&type=template&id=76db242e&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ContactForm.vue?vue&type=template&id=76db242e&scoped=true&");
+            /* harmony reexport (safe) */
+            __webpack_require__.d(__webpack_exports__, "render", function () {
+                return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactForm_vue_vue_type_template_id_76db242e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"];
+            });
+
+            /* harmony reexport (safe) */
+            __webpack_require__.d(__webpack_exports__, "staticRenderFns", function () {
+                return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactForm_vue_vue_type_template_id_76db242e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"];
+            });
+
+
+            /***/
+        }),
+
+        /***/
+        "./resources/js/components/ExampleComponent.vue":
+        /*!******************************************************!*\
+          !*** ./resources/js/components/ExampleComponent.vue ***!
+          \******************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
@@ -91931,7 +92343,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
-  
+
 )
 
 /* hot reload */
@@ -91951,7 +92363,7 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
