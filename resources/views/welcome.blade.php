@@ -89,7 +89,7 @@
                         <div class="col-12 col-sm-6 col-lg-3 section-card">
                             <img src="/icons/form.png" class="section-header-image"><br>
                             <b>Igényfelmérés</b>
-                            <hr class="section-header" style="height: 2px">
+                            <hr class="section-header" style="height: 2px; width: 100%">
                             A kapcsolatfelvételt követően egy részletes megbeszélés során megismerem elképzeléseit,
                             igényeit.
                             A megfogalmazódó kérdésekre közösen keresünk megoldást.
@@ -97,7 +97,7 @@
                         <div class="col-12 col-sm-6 col-lg-3 section-card">
                             <img src="/icons/designing.png" class="section-header-image"><br>
                             <b>Tervezés</b>
-                            <hr class="section-header" style="height: 2px">
+                            <hr class="section-header" style="height: 2px; width: 100%">
                             Az igényfelmérés során elmondottak alapján készül a projektről egy előzetes terv, mely
                             magában foglal egy látványtervet valamint egy időbeosztást is, közösen kijelölt
                             mérföldkövekkel.
@@ -106,7 +106,7 @@
                         <div class="col-12 col-sm-6 col-lg-3 section-card">
                             <img src="/icons/development.png" class="section-header-image"><br>
                             <b>Fejlesztés</b>
-                            <hr class="section-header" style="height: 2px">
+                            <hr class="section-header" style="height: 2px; width: 100%">
                             A fejlesztés az előre elfogadott beosztás alapján történik. A folyamat nyomon követhető,
                             állandó kapcsolattartás történik.
                             A fejlesztés végső szakaszában történik a tesztelés és esetleges javítás is.
@@ -114,7 +114,7 @@
                         <div class="col-12 col-sm-6 col-lg-3 section-card">
                             <img src="/icons/handover.png" class="section-header-image"><br>
                             <b>Átadás</b>
-                            <hr class="section-header" style="height: 2px">
+                            <hr class="section-header" style="height: 2px; width: 100%">
                             Végül az elkészült projekt átadásra kerül az Ön részére.
                             Igény esetén üzemeltetésre is sor kerül.
                         </div>
