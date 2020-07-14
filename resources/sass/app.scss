@@ -451,11 +451,13 @@ html, body {
     }
     .row {
         margin-left: 0 !important;
+        justify-content: center !important;
     }
     .section-card {
         max-width: 95vw;
         margin-right: 50px;
         margin-left: 20px;
+        justify-content: center !important;
     }
     .login-dropdown {
         transform: translate3d(-300px, 0px, 0px) !important;

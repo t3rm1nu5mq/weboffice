@@ -11050,8 +11050,8 @@ body::-webkit-scrollbar-track {
     left: 0;
     text-align: center;
     border-bottom: 5px solid #3DA2B0;
-  border-bottom-left-radius: 50% 20%;
-  border-bottom-right-radius: 50% 20%;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
 }
 
 .welcome_header_text {
@@ -11355,13 +11355,15 @@ body {
   }
 
   .row {
-    margin-left: 0 !important;
+      margin-left: 0 !important;
+      justify-content: center !important;
   }
 
   .section-card {
-    max-width: 95vw;
-    margin-right: 50px;
-    margin-left: 20px;
+      max-width: 95vw;
+      margin-right: 50px;
+      margin-left: 20px;
+      justify-content: center !important;
   }
 
   .login-dropdown {
