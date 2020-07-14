@@ -43,7 +43,7 @@
             </div>
         </div>
         @if (Route::has('login'))
-            <div class="top-right links">
+            <div class="top-right links" style="display: none">
                 <div class="dropleft allow-focus">
                     <button class="main-header-button btn btn-secondary dropdown-toggle" type="button"
                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
