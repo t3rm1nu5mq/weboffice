@@ -33,7 +33,7 @@
 </head>
 
 <body>
-<div class="position-ref full-height" id="app">
+<div class="position-ref full-height container" id="app" style="padding-top: 0px">
     <div class="row">
         <div class="top-left links">
             <div id="navbarBackground" class="navbar-logo-div">
@@ -65,7 +65,7 @@
         @endif
     </div>
     <div class="row" style="margin: 0px">
-        <div class="container" style="padding-bottom: 100px">
+        <div class="col-12" style="padding-bottom: 100px">
             <div class="row welcome_header_row">
                 <div class="col-12 welcome_header">
                     <p class="welcome_header_text">
@@ -76,7 +76,7 @@
         </div>
     </div>
     <div class="row" style="width: 100%;">
-        <div class="container">
+        <div class="col">
             <div class="row" style="position: relative; top: 75vh; font-size: 32px">
                 <div class="col-12" style="text-align: center">
                     Hogyan lesz az elképzelésből valóság?
@@ -86,35 +86,35 @@
             <div class="row" style="position: relative; top: 75vh; margin-top: 20px">
                 <div class="col-12" style="text-align: center">
                     <div class="row section-card-row justify-content-center" style="text-align: center">
-                        <div class="col-12 col-sm-6 col-lg-3 section-card">
+                        <div class="col-12 col-md-3 section-card">
                             <img src="/icons/form.png" class="section-header-image"><br>
                             <b>Igényfelmérés</b>
-                            <hr class="section-header" style="height: 2px; width: 100%">
+                            <hr class="section-header" style="height: 2px">
                             A kapcsolatfelvételt követően egy részletes megbeszélés során megismerem elképzeléseit,
                             igényeit.
                             A megfogalmazódó kérdésekre közösen keresünk megoldást.
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-3 section-card">
+                        <div class="col-12 col-md-3 section-card">
                             <img src="/icons/designing.png" class="section-header-image"><br>
                             <b>Tervezés</b>
-                            <hr class="section-header" style="height: 2px; width: 100%">
+                            <hr class="section-header" style="height: 2px">
                             Az igényfelmérés során elmondottak alapján készül a projektről egy előzetes terv, mely
                             magában foglal egy látványtervet valamint egy időbeosztást is, közösen kijelölt
                             mérföldkövekkel.
                             Ezek mellett derül ki az árajánlat is.
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-3 section-card">
+                        <div class="col-12 col-md-3 section-card">
                             <img src="/icons/development.png" class="section-header-image"><br>
                             <b>Fejlesztés</b>
-                            <hr class="section-header" style="height: 2px; width: 100%">
+                            <hr class="section-header" style="height: 2px">
                             A fejlesztés az előre elfogadott beosztás alapján történik. A folyamat nyomon követhető,
                             állandó kapcsolattartás történik.
                             A fejlesztés végső szakaszában történik a tesztelés és esetleges javítás is.
                         </div>
-                        <div class="col-12 col-sm-6 col-lg-3 section-card">
+                        <div class="col-12 col-md-3 section-card">
                             <img src="/icons/handover.png" class="section-header-image"><br>
                             <b>Átadás</b>
-                            <hr class="section-header" style="height: 2px; width: 100%">
+                            <hr class="section-header" style="height: 2px">
                             Végül az elkészült projekt átadásra kerül az Ön részére.
                             Igény esetén üzemeltetésre is sor kerül.
                         </div>
@@ -123,7 +123,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="col">
         <div class="row" style="position: relative; top: 85vh; font-size: 32px">
             <div class="col-12" style="text-align: center">
                 Széles eszköztár a biztos sikerért
@@ -131,26 +131,28 @@
             <hr class="section-header">
         </div>
         <div class="row logos-row" style="position: relative; top: 85vh; display: block; text-align: center">
-            <div class="col-1 logos-col">
-                <img src="/icons/html5.svg" class="logos">
-            </div>
-            <div class="col-1 logos-col">
-                <img src="/icons/css3.svg" class="logos">
-            </div>
-            <div class="col-1 logos-col">
-                <img src="/icons/javascript-4.svg" class="logos">
-            </div>
-            <div class="col-1 logos-col">
-                <img src="/icons/mysql-vector1.jpg" class="logos">
-            </div>
-            <div class="col-1 logos-col">
-                <img src="/icons/new-php-logo.svg" class="logos">
-            </div>
-            <div class="col-1 logos-col">
-                <img src="/icons/swift-logo.png" class="logos">
-            </div>
-            <div class="col-1 logos-col">
-                <img src="/icons/ionic_logo.png" class="logos">
+            <div class="col-12">
+                <div class="col-1 logos-col" style="margin-left: 0">
+                    <img src="/icons/html5.svg" class="logos">
+                </div>
+                <div class="col-1 logos-col">
+                    <img src="/icons/css3.svg" class="logos">
+                </div>
+                <div class="col-1 logos-col">
+                    <img src="/icons/javascript-4.svg" class="logos">
+                </div>
+                <div class="col-1 logos-col">
+                    <img src="/icons/mysql-vector1.jpg" class="logos">
+                </div>
+                <div class="col-1 logos-col">
+                    <img src="/icons/new-php-logo.svg" class="logos">
+                </div>
+                <div class="col-1 logos-col">
+                    <img src="/icons/swift-logo.png" class="logos">
+                </div>
+                <div class="col-1 logos-col">
+                    <img src="/icons/ionic_logo.png" class="logos">
+                </div>
             </div>
         </div>
     </div>

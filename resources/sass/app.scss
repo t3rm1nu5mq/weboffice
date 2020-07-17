@@ -126,28 +126,30 @@ nav.navbar {
     border-bottom-right-radius: 10px;
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-    border-radius: 10px;
-}
-/* Track */
-body::-webkit-scrollbar-track {
-    background: grey;
-    border: 1px solid grey;
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-}
+@media (min-width: 600px) {
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 10px;
+    }
+    /* Track */
+    body::-webkit-scrollbar-track {
+        background: grey;
+        border: 1px solid grey;
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: $semidark;
-    border-radius: 10px;
-}
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $semidark;
+        border-radius: 10px;
+    }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: $middle;
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: $middle;
+    }
 }
 
 .welcome_header {
@@ -273,11 +275,12 @@ html, body {
 .section-header {
     background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(78, 123, 176, 0.9654236694677871) 50%, rgba(0, 212, 255, 1) 100%);
     background-size: 400% 400%;
-    width: 20%;
+    width: 25%;
     height: 5px;
     border-radius: 30px;
     margin-top: 0;
     animation: gradient-background 5s ease infinite;
+    margin: auto;
 }
 
 @keyframes gradient-background {
@@ -430,7 +433,7 @@ html, body {
 /// END OF CUSTOM CHECKBOX ///
 @media (max-width: 640px) {
     .welcome_header_text {
-        font-size: 36px;
+        font-size: 32px;
     }
     .welcome_header_row {
         margin-right: -35px;
@@ -451,12 +454,6 @@ html, body {
     }
     .row {
         margin-left: 0 !important;
-        justify-content: center !important;
-    }
-    .section-card {
-        max-width: 95vw;
-        margin-right: 50px;
-        margin-left: 20px;
         justify-content: center !important;
     }
     .login-dropdown {
@@ -519,5 +516,35 @@ textarea.form-control {
         border: 2px solid white;
         border-radius: 30px;
         color: white;
+    }
+}
+
+@media (max-width: 999px) {
+    .container-fluid {
+        margin-right: -15px;
+    }
+}
+
+@media (max-width: 599px) {
+    .container {
+        overflow-x: hidden;
+    }
+    .navbar-logo-div {
+        left: calc(100% - 10px);
+    }
+    .navbar-logo-keyboard {
+        width: 90px;
+    }
+    .navbar-logo-background {
+        width: 150px;
+    }
+    .section-card-row {
+        margin-left: -20px !important;
+    }
+}
+
+@media (min-width: 960px) {
+    .col-md-3 {
+        max-width: 23% !important;
     }
 }
