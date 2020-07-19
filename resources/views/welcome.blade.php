@@ -6,6 +6,21 @@
 
     <title>TerminusMq Codes</title>
 
+    <meta property="og:title" content="TerminusMq Codes">
+    <meta property="og:site_name" content="TerminusMq Codes">
+    <meta property="og:url" content="https://terminusmq.codes">
+    <meta property="og:description" content="Web- és mobil alkalmazásfejlesztés elképzeléstől a megvalósításig">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://terminusmq.codes/images/header_background.JPG">
+
+    <meta name="description" content="Web- és mobil alkalmazásfejlesztés elképzeléstől a megvalósításig ">
+    <meta name="keywords" content="weboldal készítés, mobil alkalmazás készítés, ios, android, laravel, php">
+    <meta name="robots" content="index, follow">
+    <meta name="revisit-after" content="1 Week">
+    <meta name="distribution" content="local">
+    <meta name="language" content="HU">
+    <meta name="rating" content="general">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">

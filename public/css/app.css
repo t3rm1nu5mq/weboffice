@@ -9737,7 +9737,9 @@ a.text-dark:focus, a.text-dark:hover {
     width: 100%;
     background-color: #3da2b0;
     color: #fff;
-    text-align: center
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px
 }
 
 nav {
@@ -9944,7 +9946,9 @@ nav.navbar {
 body, html {
     font-family: Nunito, sans-serif;
     font-weight: 200;
-    margin: 0
+    margin: 0;
+    background-color: #121212;
+    color: #fff
 }
 
 .full-height, body, html {
@@ -10036,7 +10040,9 @@ body, html {
 
 .section-header-image {
     width: 30%;
-    border-radius: 30%
+    border-radius: 30%;
+    background-color: #fff;
+    padding: 5px 5px 5px 13px
 }
 
 .logos {
@@ -10202,7 +10208,9 @@ body, html {
     height: 550px;
     background: #3a6186;
     background: linear-gradient(270deg, #3a6186, #89253e);
-    color: #fff
+    color: #fff;
+    border-radius: 30px;
+    margin-bottom: 20px
 }
 
 .contact-section {
@@ -10250,6 +10258,11 @@ textarea.form-control {
 @media (max-width: 999px) {
     .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
         margin-right: -15px
+    }
+
+    #sendbutton {
+        width: 50%;
+        margin: auto auto auto 70px
     }
 }
 

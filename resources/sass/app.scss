@@ -16,6 +16,8 @@
     //right: 0;
     //bottom: 0;
     //left: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 
 }
 
@@ -232,6 +234,8 @@ html, body {
     font-weight: 200;
     height: 100vh;
     margin: 0;
+    background-color: #121212;
+    color: white;
 }
 
 .full-height {
@@ -313,6 +317,9 @@ html, body {
 .section-header-image {
     width: 30%;
     border-radius: 30%;
+    background-color: white;
+    padding: 5px;
+    padding-left: 13px
 }
 
 .logos {
@@ -481,6 +488,8 @@ html, body {
     background: -webkit-linear-gradient(to left, #3a6186, #89253e); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #3a6186, #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #fff;
+    border-radius: 30px;
+    margin-bottom: 20px;
 }
 
 .contact-section {
@@ -529,6 +538,11 @@ textarea.form-control {
 @media (max-width: 999px) {
     .container-fluid {
         margin-right: -15px;
+    }
+    #sendbutton {
+        margin: auto;
+        width: 50%;
+        margin-left: 70px;
     }
 }
 

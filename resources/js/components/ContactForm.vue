@@ -25,7 +25,7 @@
                         <textarea class="form-control" id="message" placeholder="Röviden írja le megkeresése tárgyát"
                                   v-model="contactData.message"></textarea>
                     </div>
-                    <div>
+                    <div id="sendbutton">
                         <button @click="send" class="btn btn-default submit" style="width: fit-content" type="button">
                             <i aria-hidden="true" class="fa fa-paper-plane" v-if="!sending"></i>
                             <i class="fa fa-spinner fa-spin" v-if="sending"></i>Üzenet küldése
