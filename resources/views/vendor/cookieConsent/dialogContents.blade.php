@@ -1,6 +1,6 @@
 <div class="js-cookie-consent cookie-consent cookie-consent-dialog">
 
-    <script>
+    <script type="application/javascript">
         window.addEventListener('load', (event) => {
             setTimeout(function () {
                 document.getElementById('loader').style.display = 'none';

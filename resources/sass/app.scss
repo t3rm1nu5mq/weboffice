@@ -326,8 +326,8 @@ html, body {
 }
 
 .cookie-consent-dialog {
-    width: 300px;
-    height: 330px;
+    width: 250px;
+    height: 275px;
     background-color: rgba(47, 145, 185, 0.7);
     position: fixed;
     bottom: 0;
@@ -348,16 +348,23 @@ html, body {
 
 .cookie-consent__agree {
     position: absolute;
-    margin-top: 120px;
-    margin-left: 75px;
+    margin-top: 132px;
+    margin-left: 60px;
     border-radius: 30px;
     border-color: $darkest;
     color: white;
     background-color: rgba(47, 145, 185, 0.9);
+    padding: 5px;
 
     &:hover {
         background-color: $darkest;
         font-style: oblique;
+    }
+}
+
+@media (max-width: 999px) {
+    #loader {
+        display: none;
     }
 }
 
